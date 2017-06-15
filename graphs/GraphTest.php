@@ -19,7 +19,7 @@ $g = new Graph();
 // c: {d:33},
 // d: {a:44},
 
-// 0      11      inf     inf
+// 0      11      inf     5
 // inf    0       22      inf
 // inf    inf     0       33
 // 44     inf     inf     0
@@ -48,3 +48,13 @@ $adjacencyList = [
 //echo '</pre>';
 
 $g->setAdjacencyList($adjacencyList);
+
+$inf = -1;
+$adjencyMatrix = [
+    [0,     11,     $inf,   5   ],
+    [$inf,  0,      22,     $inf],
+    [$inf,  $inf,   0,      33  ],
+    [44,    $inf,   $inf,   0   ],
+];
+
+$g->setAdjacencyMatrix($adjencyMatrix);

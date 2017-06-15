@@ -35,6 +35,7 @@ class Graph {
     public function setAdjacencyMatrix($adjacencyMatrix) {
         $this->adjacencyMatrix = $adjacencyMatrix;
         $this->adjacencyList = $this->adjacencyMatrix2AdjacencyList($adjacencyMatrix);
+        $this->showAdjacencyList();
     }
 
     /**
@@ -77,11 +78,15 @@ class Graph {
         $adjacencyList = [];
         $len = count($adjacencyMatrix);
 
-        // TODO: добавить реализацию.
         for ($i = 0; $i < $len; $i++) {
+            $adjacencyListItem = [];
             for ($j = 0; $j < $len; $j++) {
-
+                if (!is_numeric($adjacencyMatrix[$i][$j]) || $adjacencyMatrix[$i][$j] <= 0) {
+                    continue;
+                }
+                $adjacencyListItem[$j] = $adjacencyMatrix[$i][$j];
             }
+            $adjacencyList[] = $adjacencyListItem;
         }
 
         return $adjacencyList;
