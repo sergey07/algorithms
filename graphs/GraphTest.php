@@ -43,10 +43,6 @@ $adjacencyList = [
     $adjacencyListItemD
 ];
 
-//echo '<pre>';
-//var_export($adjacencyList);
-//echo '</pre>';
-
 $g->setAdjacencyList($adjacencyList);
 
 $inf = -1;
